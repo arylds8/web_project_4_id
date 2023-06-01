@@ -1,0 +1,11 @@
+.element__name{
+    color: #000;
+    margin-left: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}

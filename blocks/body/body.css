@@ -1,0 +1,13 @@
+body{
+    background-color: #000;
+    max-width: 880px;
+    color: #f1f1f1;
+    margin: 45px auto auto;
+}
+
+@media only screen and (max-width: 320px) { 
+    /* For mobile phones: */
+    body{
+        margin: 28px 19px 20px;
+    }
+  }

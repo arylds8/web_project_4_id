@@ -1,0 +1,9 @@
+.button__edit{
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    border-color: white;
+    grid-area: 1/2/2/3;
+    align-self: center;
+    margin-left: 18px;
+}

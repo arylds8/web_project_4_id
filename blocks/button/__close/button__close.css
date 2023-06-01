@@ -1,0 +1,15 @@
+.button__close{
+    position: absolute;
+    right: -50px;
+    top: -40px;
+    background-color: black;
+    border-style: none;
+}
+
+@media only screen and (max-width: 320px) { 
+    /* For mobile phones: */
+    .button__close{
+        right: -50px;
+        top: -40px;
+    }
+  }
