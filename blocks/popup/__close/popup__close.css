@@ -1,15 +1,19 @@
-.button__close{
+.popup__close{
+    border-style: none;
     position: absolute;
     right: -50px;
     top: -40px;
     background-color: black;
-    border-style: none;
+    opacity: 0.8;
 }
 
 @media only screen and (max-width: 320px) { 
     /* For mobile phones: */
-    .button__close{
-        right: -50px;
-        top: -40px;
+    .popup__close{
+        right: 0;
     }
   }
+
+  .popup__close:hover{
+    opacity: 0.5;
+}

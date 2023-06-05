@@ -1,13 +1,19 @@
-.button__add{
+.profile__add{
     width: 150px;
     height: 50px;
     border-color: white;
     background-color: black;
+    align-self: center;
+    justify-self: end;
 }
 
 @media only screen and (max-width: 320px) { 
     /* For mobile phones: */
-    .button__add{
+    .profile__add{
         width: 100%;
     }
   }
+
+  .profile__add:hover{
+    opacity: 0.5;
+}

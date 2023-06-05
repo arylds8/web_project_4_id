@@ -1,10 +1,9 @@
-.edit-form__title{
+.popup__title{
     font-family: 'Inter', sans-serif;
-    color: black;
     font-size: 24px;
     font-weight: 900;
     line-height: 29px;
-    letter-spacing: 0em;
     text-align: left;
-    margin-bottom: 54px;   
+    color: black;
+    margin-bottom: 54px;
 }

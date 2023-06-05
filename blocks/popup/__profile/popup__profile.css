@@ -1,17 +1,20 @@
-.edit-form{
+.popup__profile{
     width: 430px;
     height: 330px;
-    background-color: white;
     border-radius: 10px;
     padding: 36px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
     position: absolute;
-    display: none;
+    transform: translate(-50%, -50%);
 }
 
 @media only screen and (max-width: 320px) { 
     /* For mobile phones: */
-    .edit-form{
-        width: 55%;
+    .popup__profile{
+        width: 70vw;
         height: 322px;
+        padding: 19px;
     }
   }
