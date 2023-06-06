@@ -6,6 +6,15 @@
     margin: 46.25px auto 68px;
 }
 
+@media only screen and (max-width: 768px) { 
+    /* For mobile phones: */
+    .element{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  }
+
 @media only screen and (max-width: 320px) { 
     /* For mobile phones: */
     .element{
@@ -14,5 +23,6 @@
         grid-template-rows: 1fr;
         grid-gap: 17px;
         margin: 36px auto 20px;
+        max-width: 320px;
     }
   }

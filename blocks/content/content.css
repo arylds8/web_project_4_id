@@ -1,0 +1,19 @@
+.content{
+    max-width: 880px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 768px) { 
+    /* For mobile phones: */
+    .content{
+        max-width: 680px;
+        margin: auto 19px;
+    }
+  }
+
+@media only screen and (max-width: 320px) { 
+    /* For mobile phones: */
+    .content{
+       margin: auto 19px;
+    }
+  }

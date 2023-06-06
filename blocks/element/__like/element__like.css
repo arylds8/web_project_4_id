@@ -1,5 +1,11 @@
 .element__like{
     border-style: none;
+    grid-area: love;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;
 }
 
 .element__like:hover{

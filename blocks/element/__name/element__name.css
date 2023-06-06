@@ -6,6 +6,8 @@
     font-weight: 900;
     line-height: 29px;
     text-align: left;
-    display: flex;
-    justify-content: space-between;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    grid-area: text;
 }

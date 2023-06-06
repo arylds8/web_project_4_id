@@ -13,16 +13,16 @@ const page = document.querySelector(".page");
 editButton.addEventListener("click", openForm);
 
 function openForm() {
-      document.querySelector(".popup").classList.add('popup_active');
-      page.classList.add("page_hidden");
+      document.querySelector(".popup").classList.add('popup_opened');
+      nameInput.value = profileName.innerHTML;
+      descriptionInput.value = profileDescription.innerHTML;
    }
 
 // Tombol Close
 closeButton.addEventListener("click", closeForm )
 
 function closeForm() {
-   document.querySelector(".popup").classList.remove('popup_active');
-   page.classList.remove("page_hidden");
+   document.querySelector(".popup").classList.remove('popup_opened');
   }
 
 
@@ -39,8 +39,6 @@ function addItem(){
 
    nameInput.value="";
    descriptionInput.value="";
-
-   page.classList.remove("page_hidden");
 
    closeForm();
 }

@@ -3,3 +3,10 @@
     height: 120px;
     border-radius: 50%;
 }
+
+@media only screen and (max-width: 768px) { 
+    /* For mobile phones: */
+    .profile__image{
+        margin: auto;
+    }
+  }
