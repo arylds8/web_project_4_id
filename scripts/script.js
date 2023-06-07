@@ -9,7 +9,7 @@ const popup = document.querySelector(".popup");
 const popupForm = document.querySelector(".popup__form");
 
 
-// Tombol Edit
+// Tombol open Form
 editButton.addEventListener("click", openForm);
 
 function openForm() {
@@ -26,11 +26,10 @@ function closeForm() {
   }
 
 
-// Tombol Save
-popupForm.addEventListener("submit", addItem);
+// Tombol edit
+popupForm.addEventListener("submit", editProfile);
 
-function addItem(event){
-   
+function editProfile(event){
    event.preventDefault();
 
    profileName.textContent = nameInput.value;
