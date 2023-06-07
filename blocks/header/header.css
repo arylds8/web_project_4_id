@@ -1,11 +1,11 @@
 .header{
     max-width: 880px;
-    margin: auto;
+    margin: 45px auto auto;
 }
 
 @media only screen and (max-width: 768px) { 
     /* For mobile phones: */
     .header{
-        margin: auto 19px;
+        margin: 28px 19px auto;
     }
   }

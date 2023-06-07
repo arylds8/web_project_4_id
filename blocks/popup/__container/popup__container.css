@@ -1,6 +1,6 @@
-.popup__profile{
+.popup__container{
     width: 430px;
-    height: 330px;
+    min-height: 330px;
     border-radius: 10px;
     padding: 36px;
     background-color: white;
@@ -12,9 +12,9 @@
 
 @media only screen and (max-width: 320px) { 
     /* For mobile phones: */
-    .popup__profile{
+    .popup__container{
         width: 77vw;
-        height: 322px;
+        min-height: 322px;
         padding: 19px;
         transform: translate(-50%, -15%);
     }

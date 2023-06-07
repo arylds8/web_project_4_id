@@ -2,8 +2,10 @@
     border-style: none;
     grid-area: love;
     background-color: white;
-    width: fit-content;
-    height: fit-content;
+    background-image: url(../../../images/like-element.svg);
+    object-fit: cover;
+    width: 21px;
+    height: 19px;
     justify-self: center;
     align-self: center;
 }

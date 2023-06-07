@@ -6,6 +6,5 @@
         'text love';
     background-color: #fff;
     border-radius: 3%;
-    width: 282px;
+    max-width: 282px;
 }
-

@@ -1,41 +1,40 @@
 const editButton = document.querySelector(".profile__edit");
-const saveButton = document.querySelector(".popup__save");
 const closeButton = document.querySelector(".popup__close");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const nameInput = document.querySelector('input[name="Name"]');
 const descriptionInput = document.querySelector('input[name="Description"]');
 const place = document.querySelector(".element__name");
-const page = document.querySelector(".page");
+const popup = document.querySelector(".popup");
+const popupForm = document.querySelector(".popup__form");
 
 
 // Tombol Edit
 editButton.addEventListener("click", openForm);
 
 function openForm() {
-      document.querySelector(".popup").classList.add('popup_opened');
-      nameInput.value = profileName.innerHTML;
-      descriptionInput.value = profileDescription.innerHTML;
+      popup.classList.add('popup_opened');
+      nameInput.value = profileName.textContent;
+      descriptionInput.value = profileDescription.textContent;
    }
 
 // Tombol Close
-closeButton.addEventListener("click", closeForm )
+closeButton.addEventListener("click", closeForm)
 
 function closeForm() {
-   document.querySelector(".popup").classList.remove('popup_opened');
+   popup.classList.remove('popup_opened');
   }
 
 
 // Tombol Save
-saveButton.addEventListener("click", addItem);
+popupForm.addEventListener("submit", addItem);
 
-function addItem(){
+function addItem(event){
    
-   profileName.textContent ="";
-   profileDescription.textContent="";
+   event.preventDefault();
 
-   profileName.insertAdjacentText("afterbegin", nameInput.value);
-   profileDescription.insertAdjacentText("afterbegin", descriptionInput.value);
+   profileName.textContent = nameInput.value;
+   profileDescription.textContent = descriptionInput.value;
 
    nameInput.value="";
    descriptionInput.value="";
@@ -73,16 +72,16 @@ function addItem(){
    
 // }
 
-const likeButton = document.querySelectorAll(".element__like");
-const likeButtonActive = document.querySelectorAll("[name='fill']");
-const likeButtonNotActive = document.querySelectorAll("[name='no-fill']");
+// const likeButton = document.querySelectorAll(".element__like");
+// const likeButtonActive = document.querySelectorAll("[name='fill']");
+// const likeButtonNotActive = document.querySelectorAll("[name='no-fill']");
 
-for (let i = 0; i < likeButton.length; i++) {
-   likeButton[i].addEventListener("click", function(){
-         likeButtonActive[i].classList.toggle("element__like_not-active");
-         likeButtonActive[i].classList.toggle("element__like_active");
+// for (let i = 0; i < likeButton.length; i++) {
+//    likeButton[i].addEventListener("click", function(){
+//          likeButtonActive[i].classList.toggle("element__like_not-active");
+//          likeButtonActive[i].classList.toggle("element__like_active");
       
-         likeButtonNotActive[i].classList.toggle("element__like_active");
-         likeButtonNotActive[i].classList.toggle("element__like_not-active");
-   }); 
-}
+//          likeButtonNotActive[i].classList.toggle("element__like_active");
+//          likeButtonNotActive[i].classList.toggle("element__like_not-active");
+//    }); 
+// }

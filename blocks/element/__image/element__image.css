@@ -1,3 +1,4 @@
 .element__image{
     grid-area: image;
+    max-width: 100%;
 }
