@@ -1,4 +1,4 @@
-.element__like{
+.card__like{
     border-style: none;
     grid-area: love;
     background-color: white;
@@ -10,6 +10,6 @@
     align-self: center;
 }
 
-.element__like:hover{
+.card__like:hover{
     opacity: 0.5;
 }

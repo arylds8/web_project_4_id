@@ -1,28 +1,125 @@
 const editButton = document.querySelector(".profile__edit");
-const closeButton = document.querySelector(".popup__close");
+const closeButtonFormProfile = document.getElementById("close-form-profile");
+const closeCardEdit = document.getElementById("close-edit-card");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const nameInput = document.querySelector('input[name="Name"]');
 const descriptionInput = document.querySelector('input[name="Description"]');
+const titleImage = document.querySelector('input[name="title-image"]');
+const urlImage = document.querySelector('input[name="url-image"]');
 const place = document.querySelector(".element__name");
-const popup = document.querySelector(".popup");
+const popupProfileForm = document.getElementById("form-profile");
+const popupEditcard = document.getElementById("form-card");
+const popupCardEdit = document.querySelector(".profile__add");
 const popupForm = document.querySelector(".popup__form");
 
+//Inisial Load
 
-// Tombol open Form
-editButton.addEventListener("click", openForm);
+const initialCards = [
+   {
+     name: "Lembah Yosemite",
+     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
+   },
+   {
+     name: "Danau Louise",
+     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
+   },
+   {
+     name: "Pegunungan Gundul",
+     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
+   },
+   {
+     name: "Gunung Latemar",
+     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
+   },
+   {
+     name: "Taman Nasional Vanoise",
+     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
+   },
+   {
+     name: "Lago di Braies",
+     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
+   }
+ ];
 
-function openForm() {
-      popup.classList.add('popup_opened');
+ //get card template
+ const cardTemplate = document.querySelector("#card");
+
+ //get card container
+ const cardItem = document.querySelector(".cards");
+
+ //every card element
+ //clone cart template
+ 
+ initialCards.map((item) => {
+    const cardElement = cardTemplate.content.cloneNode(true);
+    const cardImage = cardElement.querySelector(".card__image");
+    const cardName = cardElement.querySelector(".card__name");
+    cardImage.src = item.link;
+    cardName.textContent = item.name;
+
+    //love button
+    cardElement.querySelector(".card__like").addEventListener("click", function(evt){
+    evt.target.classList.toggle("card__like_active");
+      });
+    
+    //pop up gambar
+    cardImage.addEventListener("click", popupImage);
+    
+    //add delete button
+    const deleteButton = cardElement.querySelector(".card__delete");
+    deleteButton.addEventListener("click", function(evt){
+    const listCard = deleteButton.closest(".card");
+    listCard.remove();
+    });
+    
+    cardItem.appendChild(cardElement);
+ });
+ 
+//popup image
+//get popup image template
+const popupImageTemplate = document.querySelector("#showImageTemplate");
+
+//get card container
+const popupImageContainer = document.querySelector(".bob");
+
+function popupImage() {
+  console.log(this.parentElement);
+  const popupImageTemplateClone = popupImageTemplate.content.cloneNode(true);
+  const cardImagePopup = popupImageTemplateClone.querySelector(".popup-showImage__image");
+  const cardTitlePopup = popupImageTemplateClone.querySelector(".popup-showImage__name");
+  const cardUrl = this.parentElement.querySelector('.card__image');
+  const cardName = this.parentElement.querySelector('.card__name');
+  cardImagePopup.src = cardUrl.src;
+  cardTitlePopup.textContent = cardName.textContent;
+  console.log(cardUrl.src);
+  console.log(cardName.textContent);
+
+
+  // close popup image
+  const closePopupImage = popupImageTemplateClone.querySelector("#popup-img-close");
+  closePopupImage.addEventListener("click", function(evt){
+  const popupParent = closePopupImage.closest(".popup-showImage");
+  popupParent.remove();
+  });
+
+  popupImageContainer.appendChild(popupImageTemplateClone);
+}
+
+// Tombol open Form Profile
+editButton.addEventListener("click", openFormProfile);
+
+function openFormProfile() {
+      popupProfileForm.classList.add('popup_opened');
       nameInput.value = profileName.textContent;
       descriptionInput.value = profileDescription.textContent;
    }
 
-// Tombol Close
-closeButton.addEventListener("click", closeForm)
+// Tombol Close form profile
+closeButtonFormProfile.addEventListener("click", closeForm)
 
 function closeForm() {
-   popup.classList.remove('popup_opened');
+   popupProfileForm.classList.remove('popup_opened');
   }
 
 
@@ -41,46 +138,61 @@ function editProfile(event){
    closeForm();
 }
 
-//Tombol Like tombol pertama
-// const likeButton = document.querySelector(".element__like");
-// const likeButtonActive = document.querySelector("[name='fill']");
-// const likeButtonNotActive = document.querySelector("[name='no-fill']");
+//Open Form-Card
+popupCardEdit.addEventListener("click", cardEdit);
 
-// likeButton.addEventListener("click", liked);
+function cardEdit() {
+      popupEditcard.classList.add('popup_opened');
+   }
 
-// let toggle = true;
+// Tombol Close card edit
+closeCardEdit.addEventListener("click", closeEditCard)
 
-// function liked() {
+function closeEditCard() {
+   popupEditcard.classList.remove('popup_opened');
+  }
 
-//    if (toggle) {
-//       likeButtonActive.classList.remove("element__like_not-active");
-//       likeButtonActive.classList.add("element__like_active");
-   
-//       likeButtonNotActive.classList.remove("element__like_active");
-//       likeButtonNotActive.classList.add("element__like_not-active");
 
-//       toggle = false
-//    } else {
-//       likeButtonActive.classList.add("element__like_not-active");
-//       likeButtonActive.classList.remove("element__like_active");
-   
-//       likeButtonNotActive.classList.add("element__like_active");
-//       likeButtonNotActive.classList.remove("element__like_not-active");
-//       toggle = true
-//    }
-   
-// }
+//add card 
+const formCard = document.getElementById('form-card');
+  
+  formCard.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const cardElement = cardTemplate.content.cloneNode(true);
 
-// const likeButton = document.querySelectorAll(".element__like");
-// const likeButtonActive = document.querySelectorAll("[name='fill']");
-// const likeButtonNotActive = document.querySelectorAll("[name='no-fill']");
+    const cardImage = cardElement.querySelector(".card__image");
+    const cardTitle = cardElement.querySelector(".card__name");
 
-// for (let i = 0; i < likeButton.length; i++) {
-//    likeButton[i].addEventListener("click", function(){
-//          likeButtonActive[i].classList.toggle("element__like_not-active");
-//          likeButtonActive[i].classList.toggle("element__like_active");
-      
-//          likeButtonNotActive[i].classList.toggle("element__like_active");
-//          likeButtonNotActive[i].classList.toggle("element__like_not-active");
-//    }); 
-// }
+    //love button
+    cardElement.querySelector(".card__like").addEventListener("click", function(evt){
+      evt.target.classList.toggle("card__like_active");
+    });
+
+    //delete button
+    const deleteButton = cardElement.querySelector(".card__delete");
+    deleteButton.addEventListener("click", function(evt){
+    const listCard = deleteButton.closest(".card");
+    listCard.remove();
+    });
+
+    //pop up gambar
+    cardImage.addEventListener("click", popupImage);
+
+    // memamasukkan nilai ke title
+    cardImage.src = urlImage.value;
+    cardTitle.textContent = titleImage.value;
+
+    // dorong template ke container
+    cardItem.appendChild(cardElement);
+
+    // clean up value
+    urlImage.value = '';
+    titleImage.value = '';
+
+    closeEditCard();
+  });
+
+  // pop up image
+
+  
+  

@@ -1,14 +1,15 @@
-.element{
+.cards{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 17px;
     margin: 46.25px auto 68px;
+    z-index: -1;
 }
 
 @media only screen and (max-width: 768px) { 
     /* For mobile phones: */
-    .element{
+    .cards{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -17,7 +18,7 @@
 
 @media only screen and (max-width: 320px) { 
     /* For mobile phones: */
-    .element{
+    .cards{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;

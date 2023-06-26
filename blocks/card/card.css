@@ -1,4 +1,4 @@
-.element__item{
+.card{
     display: grid;
     grid-template-columns: 80% 20%;
     grid-template-areas:
@@ -7,4 +7,5 @@
     background-color: #fff;
     border-radius: 3%;
     max-width: 282px;
+    position: relative;
 }

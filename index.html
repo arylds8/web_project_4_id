@@ -25,9 +25,9 @@
             <button class="profile__add" type="button"><img src="./images/add-button__logo.svg" alt="add-button"></button>
         </section>
 
-        <div class="popup">
+        <div class="popup" id="form-profile">
             <div class="popup__container">
-                <button class="popup__close" type="button"><img src="./images/close__icon.svg" alt="close_icon"></button>
+                <button id="close-form-profile" class="popup__close" type="button"><img src="./images/close__icon.svg" alt="close_icon"></button>
                 <h2 class="popup__title">Edit profile</h2>
                 <form class="popup__form">
                     <input class="popup__input" type="text" placeholder="Name" name="Name" required>
@@ -37,45 +37,44 @@
             </div>
         </div>
 
-        <section class="element">
-            <div class="element__item">
-                <img class="element__image" src="./images/yosemite-valley.png" alt="yosemite-valley">
-                <h2 class="element__name">Yosemite Valley 
-                </h2>
-                <button class="element__like"></button>
+        <div class="popup" id="form-card">
+            <div class="popup__container">
+                <button id="close-edit-card" class="popup__close" type="button"><img src="./images/close__icon.svg" alt="close_icon"></button>
+                <h2 class="popup__title">New Place</h2>
+                <form id="form-card" class="popup__form">
+                    <input class="popup__input" type="text" placeholder="Title" name="title-image" required>
+                    <input class="popup__input" type="text" placeholder="Image URL" name="url-image" required>
+                    <button class="popup__save" type="submit">Save</button>
+                </form>
             </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/lake-louise.png" alt="lake-louise">
-                <h2 class="element__name">Lake Louise 
-                </h2>
-                <button class="element__like"></button>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/bald-mountains.png" alt="bald-mountains">
-                <h2 class="element__name">Bald Mountains
-                </h2>
-                <button class="element__like"></button>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/latemar.png" alt="latemar">
-                <h2 class="element__name">Latemar
-                </h2>
-                <button class="element__like"></button>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/vanoise-national.png" alt="vanoise-national-park">
-                <h2 class="element__name">Vanoise National Park
-                </h2>
-                <button class="element__like"></button>
-            </div>
-            <div class="element__item">
-                <img class="element__image" src="./images/lago-di-braies.png" alt="lago-di-braies">
-                <h2 class="element__name">Lago di Braies 
-                </h2>
-                <button class="element__like"></button>
-            </div>    
+        </div>
+
+        <section class="cards">
+
+        </section>
+
+        <section class="bob">
+
         </section>
     
+        <template id="card">
+            <div class="card">
+                <button class="card__delete"></button>
+                <img class="card__image" alt="img">
+                <h2 class="card__name"></h2>
+                <button class="card__like"></button>
+            </div>
+        </template>
+
+        <template id="showImageTemplate">
+            <div class="popup-showImage">
+                <div class="popup-showImage__container">
+                    <button id="popup-img-close" class="popup__close" type="button"><img src="./images/close__icon.svg" alt="close_icon"></button>
+                    <img class= "popup-showImage__image" alt="image">
+                    <h2 class="popup-showImage__name"></h2>
+                </div>
+            </div>
+        </template>
     </main>
 
     <footer class="footer">
