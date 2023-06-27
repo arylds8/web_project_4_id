@@ -84,7 +84,6 @@ const popupImageTemplate = document.querySelector("#showImageTemplate");
 const popupImageContainer = document.querySelector(".bob");
 
 function popupImage() {
-  console.log(this.parentElement);
   const popupImageTemplateClone = popupImageTemplate.content.cloneNode(true);
   const cardImagePopup = popupImageTemplateClone.querySelector(".popup-showImage__image");
   const cardTitlePopup = popupImageTemplateClone.querySelector(".popup-showImage__name");
@@ -92,9 +91,6 @@ function popupImage() {
   const cardName = this.parentElement.querySelector('.card__name');
   cardImagePopup.src = cardUrl.src;
   cardTitlePopup.textContent = cardName.textContent;
-  console.log(cardUrl.src);
-  console.log(cardName.textContent);
-
 
   // close popup image
   const closePopupImage = popupImageTemplateClone.querySelector("#popup-img-close");

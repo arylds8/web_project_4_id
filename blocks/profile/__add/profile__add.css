@@ -5,6 +5,7 @@
     background-color: black;
     align-self: center;
     justify-self: end;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 320px) { 
