@@ -179,7 +179,7 @@ const formCard = document.getElementById('form-card');
     cardTitle.textContent = titleImage.value;
 
     // dorong template ke container
-    cardItem.appendChild(cardElement);
+    cardItem.prepend(cardElement);
 
     // clean up value
     urlImage.value = '';
