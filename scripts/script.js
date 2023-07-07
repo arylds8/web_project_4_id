@@ -112,7 +112,17 @@ function openFormProfile() {
    }
 
 // Tombol Close form profile
-closeButtonFormProfile.addEventListener("click", closeForm)
+closeButtonFormProfile.addEventListener("click", closeForm);
+
+// close form with overlay
+popupProfileForm.addEventListener("click", closeForm);
+
+//close form with esc button
+document.addEventListener("keydown", function(evt){
+  if(evt.key === "Escape"){
+    closeForm();
+  }
+});
 
 function closeForm() {
    popupProfileForm.classList.remove('popup_opened');
@@ -142,7 +152,17 @@ function cardEdit() {
    }
 
 // Tombol Close card edit
-closeCardEdit.addEventListener("click", closeEditCard)
+closeCardEdit.addEventListener("click", closeEditCard);
+
+// Close with Overlay
+popupEditcard.addEventListener("click", closeEditCard);
+
+//close form card with esc button
+document.addEventListener("keydown", function(evt){
+  if(evt.key === "Escape"){
+    closeEditCard();
+  }
+});
 
 function closeEditCard() {
    popupEditcard.classList.remove('popup_opened');
