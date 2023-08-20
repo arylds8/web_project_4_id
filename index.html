@@ -29,9 +29,15 @@
             <div class="popup__container">
                 <button id="close-form-profile" class="popup__close" type="button"><img src="./images/close__icon.svg" alt="close_icon"></button>
                 <h2 class="popup__title">Edit profile</h2>
-                <form class="popup__form">
-                    <input class="popup__input" type="text" placeholder="Name" name="Name" minlength="2" maxlength="40" required>
-                    <input class="popup__input" type="text" placeholder="Description" name="Description" minlength="2" maxlength="200" required>
+                <form class="popup__form" novalidate>
+                    <label class="popup__field">
+                        <input id="name-input" class="popup__input" type="text" placeholder="Name" name="Name" minlength="2" maxlength="40" required>
+                        <span class="name-input-error popup__input-error"></span>
+                    </label>
+                    <label class="popup__field">
+                        <input id="description-input" class="popup__input" type="text" placeholder="Description" name="Description" minlength="2" maxlength="200" required>
+                        <span class="description-input-error popup__input-error "></span>
+                    </label>
                     <button class="popup__save" type="submit">Save</button>
                 </form>
             </div>
@@ -41,9 +47,15 @@
             <div class="popup__container">
                 <button id="close-edit-card" class="popup__close" type="button"><img src="./images/close__icon.svg" alt="close_icon"></button>
                 <h2 class="popup__title">New Place</h2>
-                <form class="popup__form">
-                    <input class="popup__input" type="text" placeholder="Title" name="title-image" minlength="2" maxlength="30" required>
-                    <input class="popup__input" type="url" placeholder="Image URL" name="url-image" required>
+                <form class="popup__form" novalidate>
+                    <label class="popup__field">
+                        <input id="place-input" class="popup__input" type="text" placeholder="Title" name="title-image" minlength="2" maxlength="30" required>
+                        <span class="place-input-error popup__input-error"></span>
+                    </label>
+                    <label class="popup__field">
+                        <input id="urlplace-input" class="popup__input" type="url" placeholder="Image URL" name="url-image" required>
+                        <span class="urlplace-input-error popup__input-error"></span>
+                    </label>
                     <button class="popup__save" type="submit">Save</button>
                 </form>
             </div>
@@ -53,7 +65,7 @@
 
         </section>
 
-        <section class="bob">
+        <section id="popup-image-container" class="popup">
 
         </section>
     
@@ -66,21 +78,18 @@
             </div>
         </template>
 
-        <template id="showImageTemplate">
-            <div class="popup-showImage">
-                <div class="popup-showImage__container">
-                    <button id="popup-img-close" class="popup__close" type="button"><img src="./images/close__icon.svg" alt="close_icon"></button>
-                    <img class= "popup-showImage__image" alt="image">
-                    <h2 class="popup-showImage__name"></h2>
-                </div>
+        <div id="popupImage" class="popup">
+            <div class="popup__container-image">
+                <button id="popupImageClose" class="popup__close" type="button"><img src="./images/close__icon.svg" alt="close_icon"></button>
+                <img class= "popup__image" alt="image">
+                <h2 class="popup__image-name"></h2>
             </div>
-        </template>
+        </div>
     </main>
 
     <footer class="footer">
         <p class="footer__copyright">© 2023 Around The U.S.</p>
     </footer>
-
-    <script src="./scripts/script.js"></script>
+    <script type="module" referrerpolicy="unsafe-url" src="./scripts/script.js"></script>
 </body>
 </html>

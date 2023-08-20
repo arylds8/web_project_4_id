@@ -10,7 +10,7 @@
     align-self: flex-end;
     justify-self: center;
     color: white;
-    margin: 55px auto 37px;
+    margin: 30px auto 37px;
     border-color: white;
     cursor: pointer;
 }
@@ -20,5 +20,6 @@
     .popup__save{
         margin: 40px auto 25px;
         font-size: 14px;
+        max-width: 250px;
     }
   }
