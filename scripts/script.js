@@ -14,7 +14,7 @@ const popupCardEdit = document.querySelector(".profile__add");
 const popupForm = document.querySelector(".popup__form");
 const formInput = popupForm.querySelector(".popup__input");
 const popupCloseButton = document.querySelector(".popup__close");
-import { enableValidation} from "./validate.js";
+import {FormValidator} from "./validate.js";
 
 //Inisial Load
 const initialCards = [
@@ -188,6 +188,19 @@ formCard.addEventListener('submit', function(e) {
   
   closeEditCard();
 });
+
+
+const editProfilepopup = document.querySelector("#form-profile");
+const editProfileForm = editProfilepopup.querySelector(".popup__form");
+const editProfileFormValidator = new FormValidator({
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__save",
+  inactiveButtonClass: ".popup__save_inactive",
+  inputErrorClass: ".popup__input_type_error",
+  errorClass: ".popup__input-error_active"
+}, editProfileForm);
+
+editProfileFormValidator.enableValidation();
 //  initialCards.map((item) => {
 //     const cardElement = cardTemplate.content.cloneNode(true);
 //     const cardImage = cardElement.querySelector(".card__image");
