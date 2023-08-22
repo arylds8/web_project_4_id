@@ -10,24 +10,24 @@
 
     _isValid(popupForm, formInput){
       if (!formInput.validity.valid) {
-        showInputError(popupForm, formInput, formInput.validationMessage);
-        popupForm.querySelector(".popup__save").classList.add("popup__save_inactive");
-        popupForm.querySelector(".popup__save").disabled = true;
+        this._showInputError(popupForm, formInput, formInput.validationMessage);
+        popupForm.querySelector(this._submitButtonSelector).classList.add("popup__save_inactive");
+        popupForm.querySelector(this._submitButtonSelector).disabled = true;
       } else {
-        hideInputError(popupForm, formInput);
-        popupForm.querySelector(".popup__save").classList.remove("popup__save_inactive");
-        popupForm.querySelector(".popup__save").disabled = false;
+        this._hideInputError(popupForm, formInput);
+        popupForm.querySelector(this._submitButtonSelector).classList.remove("popup__save_inactive");
+        popupForm.querySelector(this._submitButtonSelector).disabled = false;
       }
     }
 
-    _showInputError(){
+    _showInputError(popupForm, formInput, errorMessage){
       const errorElement = popupForm.querySelector(`.${formInput.id}-error`);
       formInput.classList.add("popup__input_type_error");
       errorElement.textContent = errorMessage;
       errorElement.classList.add("popup__input-error_active");
     }
 
-    _hideInputError(){
+    _hideInputError(popupForm, formInput){
       const errorElement = popupForm.querySelector(`.${formInput.id}-error`);
       formInput.classList.remove("popup__input_type_error");
       errorElement.classList.remove("popup__input-error_active");
@@ -35,24 +35,25 @@
     }
 
     _setEventListeners(formElement){
-      formElement.querySelector(this._inputSelector).addEventListener("input", () => {
-        isValid(formElement, formElement.querySelector(this._inputSelector));
+      const inputList = Array.from(formElement.querySelectorAll(this._inputSelector));
+      inputList.forEach((inputElement) => {
+        inputElement.addEventListener("input", () => {
+          this._isValid(formElement, inputElement)
+        });
       });
     }
 
     enableValidation(){
-      this._formSelector.addEventListener("submit", () =>{
+      this._formSelector.addEventListener("submit", (evt) =>{
         evt.preventDefault();
       });
-      setEventListeners(this._formSelector);
+      this._setEventListeners(this._formSelector);
     }
 
   }
  
 
-  
 
-  
   // // Validasi form
   // const popupForm = document.querySelector(".popup__form");
   // const formInput = popupForm.querySelector(".popup__input");
