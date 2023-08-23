@@ -48,7 +48,7 @@ const cardList = document.querySelector(".cards");
 initialCards.forEach((data) => {
     const card = new Card(data);
     const cardElement = card.generatecard();
-    cardList.append(cardElement);
+    cardList.appendChild(cardElement);
  });
 
 
@@ -118,7 +118,7 @@ formCard.addEventListener('submit', function(e) {
   
   const newPlace = new Card(input);
   const cardElement = newPlace.generatecard();
-  cardList.append(cardElement);
+  cardList.prepend(cardElement);
   
   closeEditCard();
 });

@@ -50,15 +50,12 @@ export default class Card {
       this._handleClosePopup();
     });
 
-    popupImageContainer.addEventListener("click", (evt) => {
-      const closePopupImage = this._element.querySelector(".popup__close");
-      if (popupImageContainer !== evt.target) return;
-      const popupContainerImage = closePopupImage.closest(".popup__container-image");
-      popupContainerImage.remove();
-      popupImageContainer.classList.remove('popup_opened');
+    popupImageElement.addEventListener("click", (evt) => {
+      if (popupImageElement !== evt.target) return;
+      this._handleClosePopup();
     }, false);
 
-    document.addEventListener("keydown", function(evt){
+    document.addEventListener("keydown", (evt) => {
       if(evt.key === "Escape"){
         this._handleClosePopup();
       }
