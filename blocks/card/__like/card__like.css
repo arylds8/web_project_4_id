@@ -2,7 +2,7 @@
     border-style: none;
     grid-area: love;
     background-color: white;
-    background-image: url(../../../images/like-element.svg);
+    background-image: url(../../../src/images/like-element.svg);
     object-fit: cover;
     width: 21px;
     height: 19px;
