@@ -25,17 +25,6 @@ export const initialCards = [
     }
   ];
 
-export const popupButton = [
-  {
-    buttonClass: "profile__edit",
-    buttonType: "editProfile"
-  },
-  {
-    buttonClass: "profile__add",
-    buttonType: "addImage"
-  }
-];
-
 export const cardList = document.querySelector(".cards");
 export const cardListSelector = ".cards";
 export const editButton = document.querySelector(".profile__edit");

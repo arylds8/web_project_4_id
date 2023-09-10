@@ -1,3 +1,4 @@
+import "./styles/index.css";
 import {
   initialCards,
   cardList,
@@ -12,13 +13,13 @@ import {
   popupForm,
   popupProfileForm,
   popupEditcard,
-  popupButton
 } from "../utils/constants.js";
-import FormValidator from "./FormValidator.js";
+import FormValidator from "../scripts/FormValidator.js";
 import Card from "../components/Card.js";
 import {editProfile, openFormProfile, closeForm, cardEdit, closeEditCard} from "../utils/utils.js";
 import Section from "../components/Section.js";
-
+import Popup from "../components/Popup.js";
+// import PopupWithImage from "../components/PopupWithImage";
 // Initial Load
 const loadInitialCards = new Section ({
   items: initialCards,
@@ -33,11 +34,13 @@ const loadInitialCards = new Section ({
 loadInitialCards.renderItems();
 
 
-// const popupEdit = new Section({}, )
+//Initial class Popup
+const popupfunction = new Popup(popupProfileForm);
+// const popupWithImagefunction = new PopupWithImage();
 
 // Tombol open edit profile Form
 editButton.addEventListener("click", function(){
-  openFormProfile();
+  popupfunction.open();
 });
  
 // Tombol Submit edit profile

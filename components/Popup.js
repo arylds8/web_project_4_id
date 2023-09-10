@@ -1,4 +1,10 @@
-import 
+import {
+    closeButtonFormProfile,
+    closeCardEdit,
+    popupProfileForm,
+    popupEditcard
+  } from "../utils/constants.js";
+  
 export default class Popup {
     constructor(popupSelector) {
         this._popupSelector = popupSelector;
@@ -21,7 +27,16 @@ export default class Popup {
   }
 
   setEventListener(){
-    
+    closeButtonFormProfile.addEventListener("click", this.close());
+    closeCardEdit.addEventListener("click", this.close());
+    popupProfileForm.addEventListener('click', (evt) => {
+        if (popupProfileForm !== evt.target) return;
+        this.close();
+      }, false);
+    popupEditcard.addEventListener('click', (evt) => {
+        if (popupEditcard !== evt.target) return;
+        this.close();
+      }, false);
   }
 
 }
