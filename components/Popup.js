@@ -23,18 +23,16 @@ export default class Popup {
   }
 
   close() {
-    this._popupSelector.remove('popup_opened');
+    this._popupSelector.classList.remove('popup_opened');
   }
 
   setEventListener(){
-    closeButtonFormProfile.addEventListener("click", this.close());
-    closeCardEdit.addEventListener("click", this.close());
-    popupProfileForm.addEventListener('click', (evt) => {
-        if (popupProfileForm !== evt.target) return;
-        this.close();
-      }, false);
-    popupEditcard.addEventListener('click', (evt) => {
-        if (popupEditcard !== evt.target) return;
+    this._handleEscClose()
+    this._popupSelector.querySelector(".popup__close").addEventListener("click", ()=>{
+      this.close();
+    })
+    this._popupSelector.addEventListener('click', (evt) => {
+        if (this._popupSelector !== evt.target) return;
         this.close();
       }, false);
   }
